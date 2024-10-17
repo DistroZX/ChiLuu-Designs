@@ -1171,26 +1171,48 @@ section.home.light .social-icons li a:hover {
   margin-right: 1.8rem;
 }
 
-select.portfolio-filter-mobile {
-  font-size: 16px;
-  border-radius: 10px;
-  outline: 0;
-  margin-bottom: 30px;
-  position: relative;
-  width: 100%;
-}
-
 .pf-filter-wrapper {
   position: relative;
+  width: 100%;
+  margin-bottom: 30px;
 }
-.pf-filter-wrapper:after {
-  content: "";
-  font-family: "FontAwesome";
+
+select.portfolio-filter-mobile {
+  font-size: 16px;
+  border: 1px solid #ccc; /* Add a border for better visibility */
+  border-radius: 10px;
+  outline: none;
+  margin: 0; /* Reset margin */
+  padding: 10px 15px; /* Add padding for better touch targets */
+  width: 100%;
+  appearance: none; /* Remove default styling */
+  background-color: #f9f9f9; /* Light background color */
+  color: #333; /* Dark text color */
+  cursor: pointer; /* Change cursor on hover */
+  transition: border-color 0.3s, background-color 0.3s; /* Smooth transitions */
+}
+
+select.portfolio-filter-mobile:hover {
+  border-color: #007bff; /* Change border color on hover */
+}
+
+select.portfolio-filter-mobile:focus {
+  border-color: #007bff; /* Change border color on focus */
+  background-color: #fff; /* Change background color on focus */
+}
+
+/* Custom dropdown arrow using a Unicode character */
+.pf-filter-wrapper::after {
+  content: "▼"; /* Unicode character for the dropdown arrow */
+  font-size: 16px; /* Adjust size if necessary */
   position: absolute;
-  top: 0;
-  right: 20px;
-  color: #000;
+  top: 50%; /* Center vertically */
+  right: 15px; /* Position on the right */
+  transform: translateY(-50%); /* Adjust for vertical centering */
+  pointer-events: none; /* Allow clicks on the select */
+  color: #aaa; /* Arrow color */
 }
+
 
 /*=================================================================*/
 /*                      FACTS                              
